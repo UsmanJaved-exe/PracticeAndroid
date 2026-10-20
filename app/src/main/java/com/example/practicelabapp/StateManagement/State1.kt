@@ -1,0 +1,63 @@
+package com.example.practicelabapp.StateManagement
+
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+
+@Composable
+fun CountParent() {
+    var count by rememberSaveable { mutableIntStateOf(0) }
+
+    val onIncrement: () -> Unit = { count++ }
+    val onDecrement: () -> Unit = { count-- }
+    val onReset = { count = 0 }
+
+    Count(onIncrement, onDecrement, onReset, count)
+}
+
+
+@Composable
+fun Count(
+    onIncrement: () -> Unit,
+    onDecrement: () -> Unit,
+    onReset: () -> Unit,
+    count: Int
+) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Button(onClick = { onIncrement() }) {
+            Text(text = "++1")
+        }
+        Button(onClick = { onDecrement() }) {
+            Text(text = "--1")
+        }
+        Button(onClick = onReset) {
+            Text(text = "Reset")
+        }
+
+        Text(
+            text = "Count: $count",
+            fontSize = 15.sp,
+            fontWeight = FontWeight.Bold
+        )
+    }
+}
+
