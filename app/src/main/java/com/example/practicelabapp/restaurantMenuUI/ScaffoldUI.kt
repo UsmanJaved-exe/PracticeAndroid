@@ -1,6 +1,5 @@
 package com.example.practicelabapp.restaurantMenuUI
 
-import android.graphics.drawable.Icon
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -8,22 +7,18 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Star
-import androidx.compose.material.icons.filled.Timer
 import androidx.compose.material.icons.outlined.LocationOn
 import androidx.compose.material.icons.outlined.Timer
-import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SegmentedButtonDefaults.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -44,14 +39,15 @@ fun ScaffoldShow() {
             TopBarUi()
         }
     ) { innerPadding ->
+
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(350.dp)
                 .background(Color.Black)
-                .padding(innerPadding)
+//                    .padding(innerPadding)
         ) {
-            Column {
+            Column(modifier = Modifier.padding(innerPadding)) {
                 Text(
                     text = "Your Favourite neighbourhood pizza place serving fresh, cheesy, handcrafted pizza's with premium ingredients.",
                     fontSize = 15.sp,
@@ -69,9 +65,8 @@ fun ScaffoldShow() {
 
                 Spacer(modifier = Modifier.height(10.dp))
 
-                Row(
-                ){
-                   InfoPill(Icons.Outlined.LocationOn,"1.5 km","Distance",Color.Black)
+                Row {
+                    InfoPill(Icons.Outlined.LocationOn, "1.5 km", "Distance", Color.Black)
                 }
 
                 Spacer(modifier = Modifier.height(20.dp))
@@ -87,11 +82,26 @@ fun ScaffoldShow() {
                 painter = painterResource(R.drawable.img_2),
                 contentDescription = "Pizza",
                 modifier = Modifier
-                .align(Alignment.BottomEnd)
+                    .align(Alignment.BottomEnd)
                     .size(280.dp)
-                    .offset(60.dp,85.dp)
+                    .offset(60.dp, 85.dp)
             )
-        }
 
+
+            Box(
+                modifier = Modifier
+                    .align(Alignment.BottomCenter)
+                    .offset(y = 85.dp)
+//                    .padding(innerPadding)
+                    .fillMaxWidth()
+                    .fillMaxHeight(0.45f)
+                    .clip(CurveShape)
+                    .background(Color.White),
+                contentAlignment = Alignment.Center
+            ) {
+
+            }
+        }
     }
 }
+
