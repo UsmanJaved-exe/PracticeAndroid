@@ -44,6 +44,7 @@ fun TopBarUi() {
         title = {
             Text(
                 text = "Pizza Mojo",
+                color = Color.White,
                 fontSize = 25.sp,
             )
         },

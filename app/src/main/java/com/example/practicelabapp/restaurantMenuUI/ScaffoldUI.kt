@@ -90,7 +90,7 @@ fun ScaffoldShow() {
 
         DummyItem(
             "Meat Lovers Pizza",
-            "New",
+            "Special Pizzas",
             R.drawable.meatlover,
             "Rs",
             1600
@@ -98,7 +98,7 @@ fun ScaffoldShow() {
 
         DummyItem(
             "Seafood Pizza",
-            "New",
+            "Special Pizzas",
             R.drawable.sea,
             "Rs",
             1700
@@ -189,7 +189,7 @@ fun ScaffoldShow() {
                 Text(
                     text = "Your Favourite neighbourhood pizza place serving fresh, cheesy, handcrafted pizza's with premium ingredients.",
                     fontSize = 15.sp,
-                    color = Color.White
+                    color = Color.LightGray
                 )
 
                 Spacer(modifier = Modifier.height(30.dp))
@@ -211,7 +211,7 @@ fun ScaffoldShow() {
 
                 Text(
                     text = "11:00 AM - 10:30 PM",
-                    color = Color.White,
+                    color = Color.LightGray,
                     fontSize = 15.sp
                 )
             }

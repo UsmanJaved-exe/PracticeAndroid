@@ -37,7 +37,8 @@ fun InfoPill(imageVector: ImageVector, text: String, contentDescription: String,
         Spacer(modifier = Modifier.width(8.dp))
 
         Text(
-            text = text
+            text = text,
+            color = Color.DarkGray
         )
     }
 }
