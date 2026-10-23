@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -42,8 +43,133 @@ import com.example.practicelabapp.R
 fun ScaffoldShow() {
     val selected by remember { mutableStateOf(true) }
     val categories = listOf(
-        "All","Popular","Specialties","Deals","New","Beverages"
+        "All", "Classic Pizzas", "Popular Pizzas", "Special Pizzas", "Deals", "New", "Beverages"
     )
+
+    val menuItems = listOf(
+        DummyItem(
+            "BBQ Chicken Pizza",
+            "Classic Pizzas",
+            R.drawable.bbq,
+            "Rs",
+            1500
+        ),
+
+        DummyItem(
+            "Margherita Pizza",
+            "Classic Pizzas",
+            R.drawable.margherita,
+            "Rs",
+            1200
+        ),
+
+        DummyItem(
+            "Pepperoni Pizza",
+            "Popular Pizzas",
+            R.drawable.pepperoni,
+            "Rs",
+            1300
+        ),
+
+        DummyItem(
+            "Hawaiian Pizza",
+            "Special Pizzas",
+            R.drawable.hawaiian,
+            "Rs",
+            1400
+        ),
+
+        DummyItem(
+            "Vegetarian Pizza",
+            "Deals",
+            R.drawable.vegetarian,
+            "Rs",
+            1100
+        ),
+
+
+        DummyItem(
+            "Meat Lovers Pizza",
+            "New",
+            R.drawable.meatlover,
+            "Rs",
+            1600
+        ),
+
+        DummyItem(
+            "Seafood Pizza",
+            "New",
+            R.drawable.sea,
+            "Rs",
+            1700
+        ),
+
+        DummyItem(
+            "Coca-Cola",
+            "Beverages",
+            R.drawable.cocacola,
+            "Rs",
+            200
+        ),
+
+        DummyItem(
+            "Sprite",
+            "Beverages",
+            R.drawable.sprite,
+            "Rs",
+            200
+        ),
+
+        DummyItem(
+            "Fanta",
+            "Beverages",
+            R.drawable.fanta,
+            "Rs",
+            200
+        ),
+
+        DummyItem(
+            "Mountain Dew",
+            "Beverages",
+            R.drawable.mountaindew,
+            "Rs",
+            200
+        ),
+
+        DummyItem(
+            "7up",
+            "Beverages",
+            R.drawable.sevenup,
+            "Rs",
+            200
+        ),
+
+        DummyItem(
+            "Pepsi",
+            "Beverages",
+            R.drawable.pepsi,
+            "Rs",
+            200
+        ),
+
+        DummyItem(
+            "Miranda",
+            "Beverages",
+            R.drawable.mirinda,
+            "Rs",
+            200
+        ),
+
+
+        DummyItem(
+            "Chicken Fajita",
+            "Classic Pizzas",
+            R.drawable.fajita,
+            "Rs",
+            1500
+        )
+    )
+
 
 
     Scaffold(
@@ -120,7 +246,7 @@ fun ScaffoldShow() {
                     horizontalArrangement = Arrangement.spacedBy(12.dp),
                     userScrollEnabled = true,
                 ) {
-                    items(categories) {category->
+                    items(categories) { category ->
                         NaviButtons(
                             text = category,
                             selected = category == "All"
@@ -133,5 +259,15 @@ fun ScaffoldShow() {
 
         }
     }
-}
+    Spacer(modifier = Modifier.height(85.dp))
+
+    LazyColumn(
+        modifier = Modifier
+            .fillMaxWidth()
+
+
+    ) {
+        }
+    }
+
 
