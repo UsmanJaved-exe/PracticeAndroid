@@ -7,3 +7,4 @@ data class DummyItem(
     val currency: String,
     val price : Int
 )
+

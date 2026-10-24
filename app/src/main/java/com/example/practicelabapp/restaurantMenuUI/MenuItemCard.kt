@@ -14,6 +14,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -31,7 +32,9 @@ fun MenuItemCard(item: DummyItem) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(),
-        shape = RoundedCornerShape(15.dp)
+        shape = RoundedCornerShape(15.dp),
+        colors = CardDefaults.cardColors(Color.White),
+        elevation = CardDefaults.cardElevation(10.dp)
     ) {
         Row(
             modifier = Modifier
@@ -42,7 +45,7 @@ fun MenuItemCard(item: DummyItem) {
                 painter = painterResource(item.imageID),
                 contentDescription = "null",
                 modifier = Modifier
-                    .size(150.dp)
+                    .size(120.dp)
             )
 
             Spacer(modifier = Modifier.width(15.dp))
@@ -74,7 +77,7 @@ fun MenuItemCard(item: DummyItem) {
                     onClick = {},
                     modifier = Modifier
                         .align(Alignment.BottomStart)
-                        .height(50.dp),
+                        .height(45.dp),
                     colors = ButtonDefaults.buttonColors(Color.Black, Color.White),
                     elevation = ButtonDefaults.buttonElevation(10.dp)
                 ) {
