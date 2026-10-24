@@ -64,7 +64,7 @@ fun MenuItemCard(item: DummyItem) {
                 )
 
                 Text(
-                    text = item.currency,
+                    text = item.currency +" "+ item.price,
                     color = Color.Black,
                     fontSize = 25.sp,
                     fontWeight = FontWeight.Bold,
