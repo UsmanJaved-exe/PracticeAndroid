@@ -30,140 +30,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.practicelabapp.R
 
-@Preview(showBackground = true, showSystemUi = true)
+//@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun ScaffoldShow() {
-    val categories = listOf(
-        "All", "Classic Pizzas", "Popular Pizzas", "Special Pizzas", "Deals", "New", "Beverages"
-    )
-
-    val menuItems = listOf(
-        DummyItem(
-            "BBQ Chicken Pizza",
-            "Classic Pizzas",
-            R.drawable.bbq,
-            "Rs",
-            1500
-        ),
-        DummyItem(
-            "Margherita Pizza",
-            "Classic Pizzas",
-            R.drawable.margherita,
-            "Rs",
-            1200
-        ),
-
-        DummyItem(
-            "Pepperoni Pizza",
-            "Popular Pizzas",
-            R.drawable.pepperoni,
-            "Rs",
-            1300
-        ),
-
-        DummyItem(
-            "Hawaiian Pizza",
-            "Special Pizzas",
-            R.drawable.hawaiian,
-            "Rs",
-            1400
-        ),
-
-        DummyItem(
-            "Vegetarian Pizza",
-            "Deals",
-            R.drawable.vegetarian,
-            "Rs",
-            1100
-        ),
-
-
-        DummyItem(
-            "Meat Lovers Pizza",
-            "Special Pizzas",
-            R.drawable.meatlover,
-            "Rs",
-            1600
-        ),
-
-        DummyItem(
-            "Seafood Pizza",
-            "Special Pizzas",
-            R.drawable.sea,
-            "Rs",
-            1700
-        ),
-
-        DummyItem(
-            "Coca-Cola",
-            "Beverages",
-            R.drawable.cocacola,
-            "Rs",
-            200
-        ),
-
-        DummyItem(
-            "Sprite",
-            "Beverages",
-            R.drawable.sprite,
-            "Rs",
-            200
-        ),
-
-        DummyItem(
-            "Fanta",
-            "Beverages",
-            R.drawable.fanta,
-            "Rs",
-            200
-        ),
-
-        DummyItem(
-            "Mountain Dew",
-            "Beverages",
-            R.drawable.mountaindew,
-            "Rs",
-            200
-        ),
-
-        DummyItem(
-            "7up",
-            "Beverages",
-            R.drawable.sevenup,
-            "Rs",
-            200
-        ),
-
-        DummyItem(
-            "Pepsi",
-            "Beverages",
-            R.drawable.pepsi,
-            "Rs",
-            200
-        ),
-
-        DummyItem(
-            "Miranda",
-            "Beverages",
-            R.drawable.mirinda,
-            "Rs",
-            200
-        ),
-
-
-        DummyItem(
-            "Chicken Fajita",
-            "Classic Pizzas",
-            R.drawable.fajita,
-            "Rs",
-            1500
-        )
-    )
+fun ScaffoldShow(
+    selectedFilterChip: String,
+    menuItems1: List<DummyItem>,
+    categories1: List<String>
+) {
 
 
 
@@ -247,10 +124,10 @@ fun ScaffoldShow() {
                         horizontalArrangement = Arrangement.spacedBy(12.dp),
                         userScrollEnabled = true,
                     ) {
-                        items(categories) { category ->
-                            NaviButtons(
+                        items(categories1) { category ->
+                            FilterChipExample(
                                 text = category,
-                                selected = category == "All"
+                                selectedFilterChip = category
                             )
 
                         }
@@ -269,7 +146,7 @@ fun ScaffoldShow() {
             )
             {
                 items(
-                    items = menuItems,
+                    items = menuItems1,
                     key = { item -> item.name }
                 ) { item ->
                     MenuItemCard(item = item)

@@ -10,13 +10,10 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
-fun NaviButtons(
-    text: String,
-    selected: Boolean,
-) {
+fun FilterChipExample(selectedFilterChip: String, categories: List<String>, text: String) {
     FilterChip(
         selected = selected,
-        onClick = {},
+        onClick = {selectedFilterChip},
         label = {
             Text(text)
         },
