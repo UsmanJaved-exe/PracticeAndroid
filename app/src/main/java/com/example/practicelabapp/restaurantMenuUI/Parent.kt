@@ -1,6 +1,5 @@
 package com.example.practicelabapp.restaurantMenuUI
 
-import android.R.attr.text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -142,7 +141,11 @@ fun Parent() {
     )
 
 
-    ScaffoldShow(selectedFilterChip,menuItems,categories)
-    FilterChipExample(selectedFilterChip, categories,text)
+    val onFilterChange = {
 
+    }
+
+
+    ScaffoldShow(selectedFilterChip,menuItems,categories)
+    FilterChipExample(selectedFilterChip, categories, category)
 }

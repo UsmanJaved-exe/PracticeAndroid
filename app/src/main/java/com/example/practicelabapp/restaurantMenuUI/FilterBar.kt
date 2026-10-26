@@ -10,12 +10,16 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
-fun FilterChipExample(selectedFilterChip: String, categories: List<String>, text: String) {
+fun FilterChipExample(
+    selectedFilterChip: String,
+    categories: List<String>,
+    category: String,
+) {
     FilterChip(
-        selected = selected,
+        selected = true,
         onClick = {selectedFilterChip},
         label = {
-            Text(text)
+            Text(category)
         },
         colors = FilterChipDefaults.filterChipColors(
             selectedContainerColor = Color.Black,

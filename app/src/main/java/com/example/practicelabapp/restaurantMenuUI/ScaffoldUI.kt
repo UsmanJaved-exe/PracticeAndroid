@@ -39,7 +39,7 @@ import com.example.practicelabapp.R
 fun ScaffoldShow(
     selectedFilterChip: String,
     menuItems1: List<DummyItem>,
-    categories1: List<String>
+    categories1: List<String>,
 ) {
 
 
@@ -126,8 +126,9 @@ fun ScaffoldShow(
                     ) {
                         items(categories1) { category ->
                             FilterChipExample(
-                                text = category,
-                                selectedFilterChip = category
+                                selectedFilterChip,
+                                categories1,
+                                category
                             )
 
                         }
