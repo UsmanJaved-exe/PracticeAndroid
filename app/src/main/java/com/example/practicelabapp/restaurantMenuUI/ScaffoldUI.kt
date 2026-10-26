@@ -40,7 +40,9 @@ fun ScaffoldShow(
     selectedFilterChip: String,
     menuItems1: List<DummyItem>,
     categories1: List<String>,
+    onFilterChipClick: (String) -> Unit,
 ) {
+
 
 
 
@@ -127,8 +129,8 @@ fun ScaffoldShow(
                         items(categories1) { category ->
                             FilterChipExample(
                                 selectedFilterChip,
-                                categories1,
-                                category
+                                category,
+                                onFilterChipClick
                             )
 
                         }

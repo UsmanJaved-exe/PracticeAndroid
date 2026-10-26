@@ -12,12 +12,13 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun FilterChipExample(
     selectedFilterChip: String,
-    categories: List<String>,
     category: String,
+    onFilterChipClick: (String) -> Unit,
 ) {
+
     FilterChip(
-        selected = true,
-        onClick = {selectedFilterChip},
+        selected = (category == selectedFilterChip),
+        onClick = { onFilterChipClick(category)},
         label = {
             Text(category)
         },
@@ -29,3 +30,5 @@ fun FilterChipExample(
         elevation = FilterChipDefaults.filterChipElevation(10.dp)
     )
 }
+
+

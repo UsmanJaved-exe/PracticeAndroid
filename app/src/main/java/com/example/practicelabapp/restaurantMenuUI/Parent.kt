@@ -140,12 +140,10 @@ fun Parent() {
         )
     )
 
-
-    val onFilterChange = {
-
+    val onFilterChipClick: (String) -> Unit = { clickedCategory ->
+        selectedFilterChip = clickedCategory
     }
 
 
-    ScaffoldShow(selectedFilterChip,menuItems,categories)
-    FilterChipExample(selectedFilterChip, categories, category)
+    ScaffoldShow(selectedFilterChip, menuItems, categories,onFilterChipClick)
 }
