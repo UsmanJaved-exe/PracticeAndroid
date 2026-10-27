@@ -33,15 +33,14 @@ import com.example.practicelabapp.ui.theme.PracticeLabAppTheme
 fun MenuItemCard(item: DummyItem) {
     Card(
         modifier = Modifier
-            .fillMaxWidth()
-            .padding(),
+            .fillMaxWidth(),
         shape = RoundedCornerShape(15.dp),
         colors = CardDefaults.cardColors(Color.White),
         elevation = CardDefaults.cardElevation(10.dp)
     ) {
         Row(
             modifier = Modifier
-                .padding(vertical = 12.dp),
+                .padding(15.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
@@ -61,6 +60,7 @@ fun MenuItemCard(item: DummyItem) {
             ) {
                 Text(
                     text = item.name,
+                    fontSize = 12.sp,
                     color = Color.Gray,
                     modifier = Modifier
                         .align(Alignment.TopStart)
@@ -94,7 +94,7 @@ fun MenuItemCard(item: DummyItem) {
                 Text(
                     text = item.category,
                     color = Color(0xCBFF5722),
-                    fontSize = 10.sp,
+                    fontSize = 6.sp,
                     modifier = Modifier
                         .align(Alignment.TopEnd)
                 )
