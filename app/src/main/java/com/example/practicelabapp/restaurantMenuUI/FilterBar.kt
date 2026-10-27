@@ -27,7 +27,6 @@ fun FilterChipExample(
             selectedLabelColor = Color.White
         ),
         shape = RoundedCornerShape(50.dp),
-        elevation = FilterChipDefaults.filterChipElevation(10.dp)
     )
 }
 

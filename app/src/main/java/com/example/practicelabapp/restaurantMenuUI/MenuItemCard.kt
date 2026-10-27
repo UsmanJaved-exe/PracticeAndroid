@@ -24,6 +24,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.practicelabapp.R
+import com.example.practicelabapp.ui.theme.PracticeLabAppTheme
 
 //@Preview(showSystemUi = true, showBackground = true)
 @Composable
@@ -38,7 +41,7 @@ fun MenuItemCard(item: DummyItem) {
     ) {
         Row(
             modifier = Modifier
-                .padding(12.dp),
+                .padding(vertical = 12.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
@@ -64,7 +67,7 @@ fun MenuItemCard(item: DummyItem) {
                 )
 
                 Text(
-                    text = item.currency +" "+ item.price,
+                    text = item.currency + " " + item.price,
                     color = Color.Black,
                     fontSize = 25.sp,
                     fontWeight = FontWeight.Bold,
@@ -93,9 +96,25 @@ fun MenuItemCard(item: DummyItem) {
                     color = Color(0xCBFF5722),
                     fontSize = 10.sp,
                     modifier = Modifier
-                    .align(Alignment.TopEnd)
+                        .align(Alignment.TopEnd)
                 )
             }
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun MenuItemCardPreview() {
+    PracticeLabAppTheme {
+        MenuItemCard(
+            item = DummyItem(
+                name = "Pepperoni Pizza",
+                category = "Pizza",
+                imageID = R.drawable.pepperoni,
+                currency = "$",
+                price = 12
+            )
+        )
     }
 }
