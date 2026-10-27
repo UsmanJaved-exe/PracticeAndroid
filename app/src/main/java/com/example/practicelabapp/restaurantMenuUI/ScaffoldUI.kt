@@ -41,9 +41,8 @@ fun ScaffoldShow(
     menuItems1: List<DummyItem>,
     categories1: List<String>,
     onFilterChipClick: (String) -> Unit,
+    filteredList1: List<DummyItem>,
 ) {
-
-
 
 
     Scaffold(
@@ -148,13 +147,27 @@ fun ScaffoldShow(
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             )
             {
-                items(
-                    items = menuItems1,
-                    key = { item -> item.name }
-                ) { item ->
-                    MenuItemCard(item = item)
+                if (selectedFilterChip == "All") {
+                    items(menuItems1) { item ->
+                        MenuItemCard(item = item)
+                    }
+                } else {
+                    items(filteredList1) { item ->
+                        MenuItemCard(item = item)
+                    }
                 }
             }
+//                items(
+//                    items = menuItems1,
+//                    key = { item -> item.name }
+//                ) { item ->
+//                    if (selectedFilterChip == "All") {
+//                        MenuItemCard(item = item)
+//                    } else {
+//                        filteredList1(item)
+//                    }
+//                }
         }
     }
 }
+
