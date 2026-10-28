@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberOverscrollEffect
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.outlined.LocationOn
@@ -43,7 +44,7 @@ fun ScaffoldShow(
     onFilterChipClick: (String) -> Unit,
     filteredList1: List<DummyItem>,
 ) {
-
+val overscrollEffect = rememberOverscrollEffect()
 
     Scaffold(
         topBar = {
@@ -68,11 +69,11 @@ fun ScaffoldShow(
                 ) {
                     Text(
                         text = "Your Favourite neighbourhood pizza place serving fresh, cheesy, handcrafted pizza's with premium ingredients.",
-                        fontSize = 15.sp,
+                        fontSize = 12.sp,
                         color = Color.LightGray
                     )
 
-                    Spacer(modifier = Modifier.height(30.dp))
+                    Spacer(modifier = Modifier.height(10.dp))
 
                     Row(
                         horizontalArrangement = Arrangement.spacedBy(12.dp),
@@ -101,8 +102,8 @@ fun ScaffoldShow(
                     contentDescription = "Pizza",
                     modifier = Modifier
                         .align(Alignment.BottomEnd)
-                        .size(280.dp)
-                        .offset(60.dp, 85.dp)
+                        .size(220.dp)
+                        .offset(80.dp, 85.dp)
                 )
 
                 Box(
@@ -144,7 +145,8 @@ fun ScaffoldShow(
                 modifier = Modifier
                     .fillMaxSize(),
                 userScrollEnabled = true,
-                verticalArrangement = Arrangement.spacedBy(16.dp)
+                verticalArrangement = Arrangement.spacedBy(16.dp),
+                overscrollEffect = overscrollEffect
             )
             {
                 if (selectedFilterChip == "All") {

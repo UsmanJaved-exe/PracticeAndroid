@@ -58,9 +58,6 @@ fun TopBarUi() {
                 shape = CircleShape,
                 modifier = Modifier
                     .size(50.dp)
-//                    .border(BorderStroke(2.dp, Color(0xFFCFCACA)), CircleShape)
-
-
             ) {
                 Icon(
                     imageVector = Icons.Default.ArrowBack,

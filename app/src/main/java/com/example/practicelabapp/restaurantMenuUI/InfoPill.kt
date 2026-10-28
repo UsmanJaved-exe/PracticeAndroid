@@ -18,6 +18,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun InfoPill(imageVector: ImageVector, text: String, contentDescription: String,color: Color) {
@@ -38,6 +39,7 @@ fun InfoPill(imageVector: ImageVector, text: String, contentDescription: String,
 
         Text(
             text = text,
+            fontSize = 10.sp,
             color = Color.DarkGray
         )
     }
