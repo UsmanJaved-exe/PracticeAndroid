@@ -3,6 +3,7 @@ package com.example.practicelabapp.restaurantMenuUI
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.tooling.preview.Preview
@@ -17,7 +18,8 @@ fun Parent() {
         "All", "Classic Pizzas", "Popular Pizzas", "Special Pizzas", "Deals", "New", "Beverages"
     )
 
-    val menuItems = listOf(
+    val menuItems = remember {
+        listOf(
         DummyItem(
             "BBQ Chicken Pizza",
             "Classic Pizzas",
@@ -138,7 +140,8 @@ fun Parent() {
             "Rs",
             1500
         )
-    )
+        )
+    }
 
     val filteredList = menuItems.filter {
         it.category == selectedFilterChip

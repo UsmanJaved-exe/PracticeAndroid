@@ -44,7 +44,7 @@ fun ScaffoldShow(
     onFilterChipClick: (String) -> Unit,
     filteredList1: List<DummyItem>,
 ) {
-val overscrollEffect = rememberOverscrollEffect()
+    val overscrollEffect = rememberOverscrollEffect()
 
     Scaffold(
         topBar = {
@@ -126,7 +126,10 @@ val overscrollEffect = rememberOverscrollEffect()
                         horizontalArrangement = Arrangement.spacedBy(12.dp),
                         userScrollEnabled = true,
                     ) {
-                        items(categories1) { category ->
+                        items(
+                            categories1,
+                            key = { category -> category }
+                        ) { category ->
                             FilterChipExample(
                                 selectedFilterChip,
                                 category,
@@ -150,11 +153,17 @@ val overscrollEffect = rememberOverscrollEffect()
             )
             {
                 if (selectedFilterChip == "All") {
-                    items(menuItems1) { item ->
+                    items(
+                        menuItems1,
+                        key = { item -> item.id }
+                    ) { item ->
                         MenuItemCard(item = item)
                     }
                 } else {
-                    items(filteredList1) { item ->
+                    items(
+                        filteredList1,
+                        key = { item -> item.id }
+                    ) { item ->
                         MenuItemCard(item = item)
                     }
                 }
