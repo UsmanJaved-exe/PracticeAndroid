@@ -17,16 +17,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-@Composable
-fun CountParent() {
-    var count by rememberSaveable { mutableIntStateOf(0) }
 
-    val onIncrement: () -> Unit = { count++ }
-    val onDecrement: () -> Unit = { count-- }
-    val onReset = { count = 0 }
-
-    Count(onIncrement, onDecrement, onReset, count)
-}
 
 
 @Composable
