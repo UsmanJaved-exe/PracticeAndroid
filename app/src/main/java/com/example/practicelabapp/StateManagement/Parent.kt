@@ -10,23 +10,27 @@ import androidx.compose.ui.tooling.preview.Preview
 @Preview
 @Composable
 fun Master() {
-    var price by rememberSaveable { mutableIntStateOf(0) }
+    var totalPrice by rememberSaveable { mutableIntStateOf(1200) }
     var count by rememberSaveable { mutableIntStateOf(0) }
-    val pizzaPrice = 1200
+    var quantity by rememberSaveable { mutableIntStateOf(1) }
+
 
     val onIncrement: () -> Unit = { count++ }
     val onDecrement: () -> Unit = { count-- }
     val onReset = { count = 0 }
 
+    val price = 1200
     val onAdd = {
-        price * pizzaPrice
+        quantity++
+        totalPrice = price * quantity
     }
 
     val reset = {
-        price = 0
+        totalPrice = 1200;
+        quantity = 1;
     }
 
-    PizzaPriceCalculator(onAdd(), reset, count)
-    Count(onIncrement, onDecrement, onReset, count)
+    PizzaPriceCalculator(onAdd, reset, count,totalPrice,quantity)
+//    Count(onIncrement, onDecrement, onReset, count)
 
 }

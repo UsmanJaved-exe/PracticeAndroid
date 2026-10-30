@@ -10,12 +10,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun PizzaPriceCalculator(onAdd: Int, reset: () -> Unit, count: Int) {
+fun PizzaPriceCalculator(onAdd: () -> Unit, reset: () -> Unit, count: Int, totalPrice: Int, quantity: Int) {
     Column(
         modifier = Modifier
             .padding(15.dp),
@@ -23,7 +22,7 @@ fun PizzaPriceCalculator(onAdd: Int, reset: () -> Unit, count: Int) {
         verticalArrangement = Arrangement.Center
     ) {
         Button(
-            onClick = {},
+            onClick = {onAdd()},
             modifier = Modifier
                 .fillMaxWidth()
         ) {
@@ -32,8 +31,18 @@ fun PizzaPriceCalculator(onAdd: Int, reset: () -> Unit, count: Int) {
             )
         }
 
+        Button(
+            onClick = {reset()},
+            modifier = Modifier
+                .fillMaxWidth()
+        ) {
+            Text(
+                text = "Reset",
+            )
+        }
+
         Text(
-            text = "Pizza Price: ",
+            text = "Pizza Price: $totalPrice",
             fontWeight = FontWeight.Bold,
             fontSize = 26.sp
         )
